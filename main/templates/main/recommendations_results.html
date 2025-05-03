@@ -1,0 +1,48 @@
+<body>
+<div id="recommendations" class="container mt-5">
+    {% if symptoms %}
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3>Identified Symptoms</h3>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for symptom in symptoms %}
+                <li class="list-group-item">{{ symptom }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if medicines %}
+    <div class="card">
+        <div class="card-header">
+            <h3>Recommended Medicines</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Dose</th>
+                        <th>Pack Size</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for medicine in medicines %}
+                    <tr>
+                        <td>{{ medicine.0 }}</td>
+                        <td>{{ medicine.1 }}</td>
+                        <td>{{ medicine.2 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+    
+    <div class="mt-5"></div>
+    <a href="{% url 'generate_prescription' %}" class="btn btn-primary">Generate PDF Prescription</a>
+</div>

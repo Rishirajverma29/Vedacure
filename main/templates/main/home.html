@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>VedaCure</title>
+
+  <style>
+    /*------------------------------------------------Applied To All---------------------------------------------------*/
+    * {
+      margin: 0;
+      padding: 0;
+      background: #a7c957;
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    /*------------------------------------------------Applied To NavBar--------------------------------------------------*/
+
+    #logo {
+      margin-left: 1%;
+      height: 100px;
+      width: 100px;
+      background: rgba(0, 0, 0, 0);
+
+
+    }
+
+    .list {
+      background: rgba(0, 0, 0, 0);
+
+      margin-left: 30%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+    }
+
+    .list li {
+      display: inline;
+      background: rgba(0, 0, 0, 0);
+    }
+
+    /* Navbar style */
+    .navbar {
+      display: flex;
+      position: fixed;
+      /* Makes the navbar stick at the top */
+      width: 100%;
+      background: rgba(0, 0, 0, 0);
+      z-index: 1000;
+      /* Ensure the navbar is on top of other content */
+      top: 0;
+
+
+    }
+
+    /* Navigation links container */
+    .nav-links {
+      width: 100%;
+      list-style-type: none;
+      background: rgba(0, 0, 0, 0);
+
+      display: flex;
+      justify-content: space-between;
+      /* Aligns items to the right */
+      align-items: center;
+      /* margin-top: 10px; */
+      /* margin-right: 7px; */
+    }
+
+    /* Link style */
+    .nav-links a {
+      background: rgba(0, 0, 0, 0);
+      text-decoration: none;
+      color: #0a0a0a;
+      /* Default text color */
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Arial', sans-serif;
+      padding: 10px 15px;
+      display: block;
+      transition: background-color 0.3s ease;
+      /* Smooth color change */
+    }
+
+    /* Hover effect */
+    .nav-links a:hover {
+      background-color: #f2e8cf;
+      /* Color change on hover */
+      color: #bc4749;
+      /* Change text color on hover */
+    }
+
+    /*------------------------------------------------Applied to Section 1 home-------------------------------------------------*/
+    /* Container to center the image */
+    .image1 {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: hidden;
+      /* Ensures that any image overflow is hidden */
+      border-radius: 100px;
+    }
+
+    /* Image styling */
+    .centered-image {
+
+      max-width: 25%;
+      /* Ensures the image does not exceed container width */
+      max-height: 25%;
+      /* Ensures the image does not exceed container height */
+      object-fit: contain;
+      /* Maintains the aspect ratio of the image */
+    }
+
+    .div1 {
+
+      margin-top: 20px;
+      width: 100%;
+      text-align: center;
+      padding-top: 0px;
+    }
+
+    #Line-1 {
+      font-size: xx-large;
+      margin-top: 25px;
+      text-align: center;
+      color: #386641;
+    }
+
+    #Line-2 {
+      font-size: x-large;
+      margin-top: 20px;
+      text-align: center;
+      color: #090908;
+    }
+
+    #Line-3 {
+      margin-top: 15px;
+      text-align: center;
+      opacity: 0.8;
+    }
+
+    /* Style for the "Try Now" button */
+    #try-now-button {
+      background-color: #386641;
+      color: #f2e8cf;
+      margin-bottom: 30px;
+      padding: 10px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      /* Remove underline */
+      border-radius: 5px;
+      /* Rounded corners */
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Hover effect */
+    #try-now-button:hover {
+      background-color: #f2e8cf;
+      /* Change background color on hover */
+      color: #bc4749;
+      transform: scale(1.05);
+      /* Slightly enlarge button */
+    }
+
+    /*------------------------------------------------Applied to about us--------------------------------------------------*/
+
+    /* About Us Section Styling */
+    .about-us {
+      margin-top: 10%;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px #090908;
+    }
+
+    .about-us h2 {
+      font-size: 2.5em;
+      text-align: left;
+      color: #090908;
+      margin-bottom: 30px;
+    }
+
+    .about-us p {
+      font-size: 1.1em;
+      text-align: left;
+      color: #555;
+      margin-bottom: 50px;
+    }
+
+    .about-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    /* Individual Detail Section */
+    .about-detail {
+
+      padding: 20px;
+      width: 300px;
+      border-radius: 8px;
+      background-color: #6a994e;
+      box-shadow: 0 4px 8px #090908;
+      transition: transform 0.3s ease-in-out;
+
+    }
+
+    .about-detail:hover {
+      transform: translateY(-10px);
+    }
+
+    .about-detail h3 {
+      font-size: 1.8em;
+      background-color: #6a994e;
+      color: #0c0f0d;
+      margin-bottom: 15px;
+    }
+
+    .about-detail p {
+      font-size: 1em;
+      background-color: #6a994e;
+      color: #f2e8cf;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .about-details {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-detail {
+        width: 80%;
+        /* Stack the details vertically on smaller screens */
+        margin-bottom: 20px;
+      }
+    }
+
+
+    /*------------------------------------------------Applied to Shopping--------------------------------------------------*/
+
+
+    /* Section Styling */
+    .shopping-section {
+      text-align: left;
+      padding: 50px 0;
+      padding-left: 10px;
+      margin-top: 5%;
+    }
+
+    .shopping-section h2 {
+      font-size: 2.5em;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #090908;
+    }
+
+    .shopping-section p {
+      font-size: 1.2em;
+      margin-bottom: 50px;
+      color: #555;
+    }
+
+    /* Card Container */
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      /* Makes it responsive */
+    }
+
+    /* Card Styling */
+    .card {
+      background-color: #6a994e;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px #090908;
+      overflow: hidden;
+      width: 280px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px #090908;
+    }
+
+    /* Card Image */
+    .card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover .card-image {
+      opacity: 0.8;
+    }
+
+    /* Card Content */
+    .card-content {
+      background-color: #6a994e;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      background-color: #6a994e;
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: #090908;
+    }
+
+    .card-content p {
+      background-color: #6a994e;
+      font-size: 1em;
+      margin-bottom: 20px;
+      color: #f2e8cf;
+    }
+
+    .card-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #386641;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .card-btn:hover {
+      background-color: #f2e8cf;
+      color: #bc4749;
+    }
+
+    /* Responsive Design for Smaller Screens */
+    @media (max-width: 768px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /*------------------------------------------------Applied to about us--------------------------------------------------*/
+    #contact {
+      margin-top: 10%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #386641;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #386641;
+      margin-bottom: 10px;
+      font-size: 1.8em;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    /* ---------------------------------------------------Contact Form Styles------------------------------------------------------ */
+    .container h1 {
+      margin-top: 40px;
+      color: #090908;
+    }
+
+    .contact-form h2 {
+      color: #090908;
+    }
+
+
+    .contact-form {
+      background-color: #a7c957;
+
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px#090908;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      color: #386641;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 2px solid #090908;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    .contact-form button {
+      background-color: #386641;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #f2e8cf;
+      /* Change background color on hover */
+      color: #bc4749;
+    }
+
+    /* Contact Details */
+    .contact-details {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .contact-details div {
+
+      width: 48%;
+      padding: 10px;
+      background-color: #a7c957;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px #090908;
+    }
+
+    .contact-details h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #090908;
+      font-size: 1.6em;
+    }
+
+    .contact-details p {
+      color: #090908;
+      padding-bottom: 0px;
+      font-size: 1.1em;
+    }
+  </style>
+  {% load static %}
+</head>
+
+<body>
+  <!----------------------------------------------NavBar--------------------------------------------------------->
+
+  <nav class="navbar">
+    <div class="nav-links">
+      <img src="{% static 'images/logo.png' %}" id="logo">
+      <div class="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#shoping">Shoping</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </div>
+  </nav>
+
+  <!----------------------------------------------Section 1(Home)----------------------------------------------------->
+  <section id="home">
+
+    <div class="image1">
+      <img src="{% static 'images/1.png' %}" alt="Centered Image" class="centered-image">
+    </div>
+
+    <div class="div1">
+
+      <p id="Line-1">
+      <h1>Welcome To Vedacure</h1>
+      </p>
+      <p id="Line-2">Your<b> Ayurvedic Remedy Companion</b></p>
+      <p id="Line-3">Simply Enter Your Symptoms to Uncover Personalized Ayurvedic Solutions.</p>
+      <br><br>
+      <a href="/test" id="try-now-button">Try Now</a>
+    </div>
+
+  </section>
+  <!----------------------------------------------about us----------------------------------------------------->
+  <section class="about-us" id="about">
+
+    <div class="about-us-content">
+      <br><br>
+      <h2>About Us :</h2>
+      <p>Welcome to <strong>Ayurveda Solutions</strong>, where we help you discover personalized Ayurvedic treatments
+        based on your symptoms. Our goal is to provide a natural, holistic approach to healing through the power of
+        Ayurvedic knowledge.</p>
+
+      <div class="about-details">
+        <div class="about-detail">
+          <h3>Our Mission</h3>
+          <p>At Ayurveda Solutions, we are dedicated to bridging modern healthcare with ancient wisdom. We believe in
+            the power of Ayurveda to help restore balance and wellness to your body and mind. By offering personalized
+            Ayurvedic formulations based on your specific symptoms, we empower you to take control of your health
+            naturally.</p>
+        </div>
+
+        <div class="about-detail">
+          <h3>How It Works</h3>
+          <p>Our platform uses a simple yet effective system to match your symptoms with appropriate Ayurvedic remedies
+            and formulations. You simply input your symptoms, and our advanced system generates a list of Ayurvedic
+            treatments, herbs, and products tailored to your needs. These recommendations are based on centuries-old
+            Ayurvedic principles that aim to bring your body and mind into harmony.</p>
+        </div>
+
+        <div class="about-detail">
+          <h3>Why Choose Ayurveda?</h3>
+          <p>Ayurveda is one of the oldest and most holistic systems of medicine. Unlike conventional medicine that
+            often targets only the symptoms, Ayurveda focuses on treating the root causes of imbalances in the body. Our
+            solutions are designed to promote long-term wellness, prevent illness, and bring a sense of peace to your
+            mind and body.</p>
+        </div>
+      </div>
+      <br>
+    </div>
+
+  </section>
+  <!----------------------------------------------shopping----------------------------------------------------->
+  <section class="shopping-section" id="shoping">
+    <br>
+    <h2>Explore Ayurvedic Products : </h2>
+    <p>Browse through the best Ayurvedic shops and products available online.</p>
+    <br><br>
+    <div class="card-container">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="{% static 'images/amazoncard.jpg' %}" alt="Shop 1" class="card-image">
+        <div class="card-content">
+          <h3>Amazon</h3>
+          <p>Browse a wide range of Ayurvedic medicines and wellness products.</p>
+          <a href="https://www.amazon.in/?&tag=googhydrabk1-21&ref=pd_sl_5szpgfto9i_e&adgrpid=155259813593&hvpon
+                    e=&hvptwo=&hvadid=674893540034&hvpos=&hvnetw=g&hvrand=13004218791200233701&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint
+                    =&hvlocphy=9303589&hvtargid=kwd-64107830&hydadcr=14452_2316413&gad_source=1" target="_blank"
+            class="card-btn">Visit Shop</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="{% static 'images/card2.jpg' %}" alt="Shop 2" class="card-image">
+        <div class="card-content">
+          <h3>Kottakkal Arya Vaidya Sala</h3>
+          <p>Explore natural Ayurvedic skincare and haircare products.</p>
+          <a href="https://shop.aryavaidyasala.com/medicines.html" target="_blank" class="card-btn">Visit Shop</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="{% static 'images/Patanjali-5-1-17.png' %}" alt="Shop 3" class="card-image">
+        <div class="card-content">
+          <h3>Patanjali</h3>
+          <p>Find authentic Ayurvedic ingredients and herbs for your health.</p>
+          <a href="https://www.patanjaliayurved.net/" target="_blank" class="card-btn">Visit Shop</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!----------------------------------------------Contact Us----------------------------------------------------->
+  <section id="contact">
+
+    <div class="container">
+      <h1>Contact Us :</h1>
+      <p>We'd love to hear from you! Whether you have a question, feedback, or need support, feel free to reach out.</p>
+
+      <!-- Contact Form Section -->
+      <div class="contact-form">
+        <h2>Get In Touch</h2>
+        <form action="submit_contact_form.php" method="POST">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Details Section -->
+      <div class="contact-details">
+        <div>
+          <h3>Our Office</h3>
+          <p>VedaCure Ayurvedic Remedies</p>
+          <p>123 Ayurveda Road</p>
+          <p>City, State, Zip Code</p>
+          <p>Email: support@vedacure.com</p>
+          <p>Phone: +1 (555) 123-4567</p>
+        </div>
+        <div>
+          <h3>Business Hours</h3>
+          <p>Monday to Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+</body>
+
+</html>

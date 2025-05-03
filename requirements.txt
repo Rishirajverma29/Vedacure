@@ -1,0 +1,6 @@
+django
+django-htmx
+pandas
+google-generativeai
+jinja2
+pdfkit
