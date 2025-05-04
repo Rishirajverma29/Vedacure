@@ -30,7 +30,7 @@ logging.basicConfig(
 )
 
 # GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
-GEMINI_API_KEY = 'AIzaSyBwiutiunZ3zocHTFc6KOOK074PhNn9FEs'
+GEMINI_API_KEY = 'AIzaSyAifE1Hqp-q8D_ifWGhPkmrk--p9sr1sGs'
 
 generation_config = {
     "temperature": 1,
