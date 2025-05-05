@@ -16,7 +16,7 @@ from datetime import datetime
 
 
 def homepage(request):
-    return render(request, 'main/home.html')
+    return render(request, 'main/homepage.html')
 
 def test(request):
     return render(request, 'main/test.html')
