@@ -2,5 +2,5 @@ django
 django-htmx
 google-generativeai
 jinja2
-pdfkit
+# pdfkit
 wkhtmltopdf

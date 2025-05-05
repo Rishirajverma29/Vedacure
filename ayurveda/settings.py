@@ -122,7 +122,7 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [BASE_DIR / "main/static"]
 
-PDFKIT_CONFIG = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+# PDFKIT_CONFIG = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
