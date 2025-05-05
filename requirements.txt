@@ -3,3 +3,4 @@ django-htmx
 google-generativeai
 jinja2
 pdfkit
+wkhtmltopdf
