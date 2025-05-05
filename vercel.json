@@ -8,7 +8,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "main/wsgi.py"
+        "dest": "ayurveda/wsgi.py"
       }
     ]
   }
